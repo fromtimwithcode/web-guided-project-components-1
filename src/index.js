@@ -81,8 +81,8 @@ function makePanel({ title, content }) {
   //  and also using the open and close arrows imported at the top of the file
   panelTitle.textContent = title;
   panelContent.textContent = content;
-  openButton.textContent = open;
-  closeButton.textContent = close;
+  openButton.textContent = constants.open;
+  closeButton.textContent = constants.close;
   // TASK 9- When the 'open' or 'close' buttons are clicked, the content is toggled on/off:
   //  - the open button needs to go away (the 'hide-btn' class name controls this)
   //  - the close button needs to show (the 'hide-btn' class name controls this)
@@ -116,3 +116,20 @@ panelElements.forEach(panel => {
 // and returns an anchor tag with the right href, class and textContent.
 // Loop over the 'linkData' in the data folder, generate anchor tags
 // and append them to the nav.
+function linkMaker ({ href, className, text }) {
+  // step 1: create the element
+  const link = document.createElement('a');
+  // step 2: add data ie content
+  link.textContent = text;
+  // step 3: add className for styling
+  link.className = className;
+  // step 4: add any associated functionality
+  link.href = href;
+  // step 5: NEVER FORGET TO RETURN!
+  return link
+}
+
+linkData.forEach(link => {
+  const linkElem = linkMaker(link);
+  document.querySelector('nav').appendChild(linkElem);
+});
