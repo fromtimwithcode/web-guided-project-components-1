@@ -24,12 +24,14 @@ imageData.forEach(img => {
 //  On the one hand, the default export from data/panelData.js
 //  On the other hand, the default export from data/constants.js
 //  Destructure `open` and `close` from the constants
-
+import panelData from './data/panelData.js';
+import constants from './data/constants.js';
+import linkData from './data/linkData.js';
 
 // TASK 2- Verify our imports using log statements
-console.log() // log the panelData
-console.log() // log the open arrow
-console.log() // log the close arrow
+console.log(panelData) // log the panelData
+console.log(constants) // log the open arrow
+console.log(linkData) // log the close arrow
 
 
 // TASK 3- Comment out the div.panel from index.html and grab its parent element.
